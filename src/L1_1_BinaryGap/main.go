@@ -9,9 +9,8 @@ func Solution(N int) int {
 	// write your code in Go 1.4
 	b_N := strconv.FormatInt(int64(N), 2)
 
-
-	o_numbers := 0
-	l_numbers := 0
+	o_numbers := 0    // 序列中0的数量
+	l_numbers := 0    // 序列中1的数量
 	max_o := 0
 	for i:=0;i<len(b_N);i++ {
 		if b_N[i] == 49 {
@@ -20,6 +19,7 @@ func Solution(N int) int {
 			o_numbers ++
 		}
 		if l_numbers == 2 {
+			// 如果1和1之间形成一个封闭，则l_number==2
 			if max_o > o_numbers {
 				max_o = max_o
 			} else {
