@@ -11,6 +11,7 @@ func Solution(A []int) int {
 		ACounter[i] = 0
 	}
 
+
 	for k, _ := range ACounter {
 		for _, i := range A {
 			if i == k {
