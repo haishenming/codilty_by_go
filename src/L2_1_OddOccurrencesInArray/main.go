@@ -12,7 +12,7 @@ func Solution(A []int) int {
 	}
 
 
-	for k, _ := range ACounter {
+	for k := range ACounter {
 		for _, i := range A {
 			if i == k {
 				ACounter[k] ++
