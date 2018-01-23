@@ -13,7 +13,6 @@ import (
 
 func Solution(A []int) int {
 	// write your code in Go 1.4
-	// 数组最大值和最小值的差
 	X := len(A)
 	seens := make([]bool, X)
 	fmt.Println(seens)
