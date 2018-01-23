@@ -4,12 +4,6 @@ import (
 	"fmt"
 )
 
-/*
-
-有问题，待修改
-
- */
-
 // you can also use imports, for example:
 // import "fmt"
 // import "os"
@@ -20,45 +14,23 @@ import (
 func Solution(A []int) int {
 	// write your code in Go 1.4
 	// 数组最大值和最小值的差
-	maxA := 0
-	minA := 0
+	X := len(A)
+	seens := make([]bool, X)
+	fmt.Println(seens)
+
 	for _, a := range A {
-		if a > maxA {
-			maxA = a
-		} else if a < minA {
-			minA = a
+		if 0 < a && a <= X {
+			seens[a-1] = true
 		}
 	}
 
-	X := maxA - minA
-	B := make([]int, X)
-	sumB := 0
-	for i:=1;i<=X;i++{
-		sumB += i
-	}
-
-	realSumB := 0
-	for _, a := range A {
-		if a <= 0 {
-			continue
-		}
-		if B[a-1] == 0{
-			B[a-1] = a
-			realSumB += a
-		}
-
-	}
-	ret := sumB - realSumB
-	if realSumB > 0 {
-		if ret == 0 {
-			return X + 1
-		} else {
-			return ret
+	for i := range seens {
+		if seens[i] == false {
+			return i + 1
 		}
 	}
 
-
-	return 1
+	return X + 1
 
 }
 
