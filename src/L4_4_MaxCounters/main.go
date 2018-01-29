@@ -24,7 +24,7 @@ func Solution(N int, A []int) []int {
 				result[value-1] = base
 			}
 
-			result[value-1] +=1
+			result[value-1] += 1
 
 			if currentMax < result[value-1] {
 				currentMax = result[value-1]
@@ -32,7 +32,7 @@ func Solution(N int, A []int) []int {
 		}
 	}
 
-	for idx, value := range(result) {
+	for idx, value := range (result) {
 		if value < base {
 			result[idx] = base
 		}
@@ -40,7 +40,6 @@ func Solution(N int, A []int) []int {
 
 	return result
 }
-
 
 func main() {
 
