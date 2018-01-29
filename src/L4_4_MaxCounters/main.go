@@ -1,13 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
-
-
-/*
-待优化
- */
+import "fmt"
 
 // you can also use imports, for example:
 // import "fmt"
@@ -18,33 +11,36 @@ import (
 
 func Solution(N int, A []int) []int {
 	// write your code in Go 1.4
-	ret := make([]int, N+1)
-	maxa := 0
-	mina := 0
-	for _, a := range A {
-		if a < N {
-			 if ret[a] < mina {
-			 	ret[a] = mina
-			 }
-			 ret[a] ++
-			 if ret[a] > maxa {
-			 	maxa = ret[a]
-			 }
+	maxNum := N + 1
+	base := 0
+	currentMax := 0
+	result := make([]int, N)
+
+	for _, value := range(A) {
+		if value == maxNum {
+			base = currentMax
 		} else {
-			mina = maxa
+			if result[value-1] < base {
+				result[value-1] = base
+			}
+
+			result[value-1] +=1
+
+			if currentMax < result[value-1] {
+				currentMax = result[value-1]
+			}
 		}
 	}
 
-	for i, r:= range ret {
-		if r < mina {
-			ret[i] = mina
+	for idx, value := range(result) {
+		if value < base {
+			result[idx] = base
 		}
 	}
 
-	return ret[1:]
-
-
+	return result
 }
+
 
 func main() {
 
