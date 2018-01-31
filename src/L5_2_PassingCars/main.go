@@ -11,10 +11,8 @@ func Solution(A []int) int {
 			curZeroCnt += 1
 		} else {
 			totalPairs += curZeroCnt
-
 		}
 	}
-
 
 	if totalPairs > 1000000000 {
 		return -1
@@ -22,12 +20,10 @@ func Solution(A []int) int {
 		return totalPairs
 	}
 
-
 }
 
-
 func main() {
-	A := []int {0,1,0,1,1}
+	A := []int{0, 1, 0, 1, 1}
 	ret := Solution(A)
 	fmt.Println(ret)
 }
